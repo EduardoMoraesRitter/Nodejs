@@ -1,3 +1,10 @@
+/*
+NodeJS - sua arquitertura é totalmente non-blocking thread(nao bloqueia), boa performace em consumo de memoria, 
+multi servidores, o usuarios podem aguardar livre de aguardar muito sem receber dead-locks, 
+trabalhando diretamente com protocolos de rede(HTTP, HTTPs, FTP, SSH, DNS, TCP, UDP, WebSockets), ultilizando bibliotecas para usar recursos do sistema, 
+tudo isso graças ao V8 do JS baseado no Unix. desenvolvido em 2009.
+*/
+
 //modulo http, que ja vem por default instalado
 var http = require('http');
 
