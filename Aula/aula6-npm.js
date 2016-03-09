@@ -7,6 +7,18 @@ listar todos os modulos: npm list -g
 versao : npm -v
 
 site: https://www.npmjs.com/
+
+Abaixo vou lançar 3 comandos para atualizarmos nosso node.
+
+npm cache clean -f
+npm install -g n
+n stable
+
+E para finalizar
+node --version
+
+npm install imagemin-pngquant
+
 */
 
 zipper = require('zipper').Zipper;
