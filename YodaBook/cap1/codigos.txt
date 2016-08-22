@@ -1,0 +1,21 @@
+$node - REPL
+
+process.version
+
+process.env.NODE_ENV
+
+--glocal
+/rato/g.test('O rato roeu a ropa');
+
+/rato/g.test('O gato roeu a ropa');
+
+/(g|r)ato/g.test('O gato roeu a ropa');
+
+--numeros
+var arr = [1,2,3,4,5,6], sum=0;
+for(var i=0, max=arr.length; i<max; i++){sum += arr[i];}
+
+arr.forEach(function(n){sum+=n;});
+
+sum = arr.reduce(function(prev, curr){return prev + curr;});
+
