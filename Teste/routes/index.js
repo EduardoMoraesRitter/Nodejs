@@ -1,7 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/products', function (req, res) {
+var ProductsModel = require('../model/ProductsModel.js')
+//cria dependencia e injeta o model
+var ProductsController = require('../controller/ProductsController.js')(ProductsModel);
+
+router.get('/products', function (req, res) {//http://localhost:3000/products
   res.json([
       {"name":"banana"},
       {"name":"laranja"},
@@ -10,15 +14,19 @@ router.get('/products', function (req, res) {
   ]);
 });
 
-router.get('/products/:_id', function (req, res) {
+router.get('/products/:_id', function (req, res) {//http://localhost:3000/products/:_id=12
+    debugger//58:00
     console.log(req.params);
     var _id = parseInt(req.params._id);
     res.json({"name":"banana", "id":_id});
 });
 
-router.post('/products', function (req, res) {
-    res.status(201).json({"status":"criado"});
-});
+//estatico
+//router.post('/products', function (req, res) {
+    //res.status(201).json({"status":"criado"});
+//});
+//dinamico controller
+router.post('/products', ProductsController.create);//http://localhost:3000/products
 
 router.put('/products/:_id', function (req, res) { 
     var _id = parseInt(req.params._id, 10);
@@ -32,3 +40,8 @@ router.delete('/products/:_id', function (req, res) {
 
 //exportar as rotas
 module.exports = router;
+
+/*
+C:\Program Files (x86)\MongoDB\Server\3.0\bin\
+mongod.exe
+*/

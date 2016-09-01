@@ -2,14 +2,17 @@
   "name": "hhh",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  
+  "main": "app.js",
+  "start": "nodemon app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC", 
+  "license": "ISC",
   "Dependencies": {
-    "express" : "^4.12.3"
+    "express": "^4.12.3"
+  },
+  "dependencies": {
+    "nodemon": "^1.10.2"
   }
 }
