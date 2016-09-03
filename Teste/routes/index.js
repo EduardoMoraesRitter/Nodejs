@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var ProductsModel = require('../model/ProductsModel.js')
+
 //cria dependencia e injeta o model
 var ProductsController = require('../controller/ProductsController.js')(ProductsModel);
 
