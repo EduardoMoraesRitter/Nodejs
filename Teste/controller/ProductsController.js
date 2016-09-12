@@ -5,37 +5,52 @@ function ProductsController(Model) {
 };
 
 ProductsController.prototype.findAll = function(req, res) {
-    res.json(this.Model.findAll(function(err, res) {
-        //console.log(err, res);
-        return res;
-    }));
+    //res.json(this.Model.findAll(function(err, res) {
+    //    return res;
+    //}));
+    this.Model.findAll(function(err, result) {
+        console.log(err, result);
+        res.json(result);
+    });
 };
 
 ProductsController.prototype.findOne = function(req, res) {
-    var date = req.body;
-    _id = req.params.id;
-    res.status(201).json({ "findOne": "findOne" });
+    var x = req.params._id;
+    this.Model.findOne(x, function(err, result) {
+        console.log(err, result);
+        res.json(result);
+    });
 };
 
 ProductsController.prototype.create = function(req, res) {
     var data = req.body;
-    this.Model.create(data, function(err, res) { // no calback primeiro o err depois o resposta
-        console.log(err, res);
+    console.log(data);
+    this.Model.create(data, function(err, result) { // no calback primeiro o err depois o resposta
+        console.log(err, result);
     });
     res.status(201).json({ "create": "create" });
 };
 
 ProductsController.prototype.update = function(req, res) {
-    _id = req.params.id;
+    var data = req.body;
+    var _id = req.params.id;
+    this.Model.update(data, _id, function(err, result) { // no calback primeiro o err depois o resposta
+        console.log(err, result);
+    });
     res.status(201).json({ "update": "update" });
 };
 
 ProductsController.prototype.delete = function(req, res) {
-    _id = req.params.id;
+    var _id = req.params.id;
+    this.Model.delete(_id, function(err, result) { // no calback primeiro o err depois o resposta
+        res.json(result);
+    });
     res.status(201).json({ "delete": "delete" });
 };
 
 module.exports = new ProductsController(ProductsModel);
+
+//promissyFyAll ou bluebird tranforma o callback em um promessy  : function(err, result) {
 
 //curl -H "Content-Type: application/json" \ -d '{"name":"Jane Doe"}' http://localhost:3000/products
 

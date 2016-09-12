@@ -8,8 +8,11 @@ ProductsModel.prototype.findAll = function(callback) {
 };
 
 ProductsModel.prototype.findOne = function(_id, callback) { //dentro o objeto create
-    mongo.collection('products').find({ _id: _id }, callback);
+    mongo.collection('products').findOne({ "_id": mongo.ObjectId(_id) }, callback);
 }
+
+//findOne - sempre retorna um objeto so
+//find - retorna um array
 
 ProductsModel.prototype.create = function(data, callback) { //dentro o objeto create
     mongo.collection('products').save(data, callback);
@@ -25,4 +28,4 @@ ProductsModel.prototype.delete = function(_id, callback) { //dentro o objeto cre
 
 module.exports = new ProductsModel();
 
-//1:16:50
+//1:29:30
