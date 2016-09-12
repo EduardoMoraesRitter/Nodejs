@@ -18,8 +18,21 @@ ProductsModel.prototype.create = function(data, callback) { //dentro o objeto cr
     mongo.collection('products').save(data, callback);
 }
 
+/*
 ProductsModel.prototype.update = function(data, _id, callback) { //dentro o objeto create
     mongo.collection('products').update(data, callback);
+}
+*/
+
+ProductsModel.prototype.update = function(data, callback) {
+    console.log(data);
+    mongo.collection('products').update({ name: 'hhhh' }, { $set: { name: 'hhhh' } }
+        //{email: "srirangan@gmail.com"}, {$set: {password: "iReallyLoveMongo"}}
+        ,
+        function(err, updated) {
+            if (err || !updated) console.log("User not updated");
+            else console.log("User updated");
+        });
 }
 
 ProductsModel.prototype.delete = function(_id, callback) { //dentro o objeto create

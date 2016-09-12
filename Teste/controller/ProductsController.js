@@ -33,8 +33,7 @@ ProductsController.prototype.create = function(req, res) {
 
 ProductsController.prototype.update = function(req, res) {
     var data = req.body;
-    var _id = req.params.id;
-    this.Model.update(data, _id, function(err, result) { // no calback primeiro o err depois o resposta
+    this.Model.update(data, function(err, result) { // no calback primeiro o err depois o resposta
         console.log(err, result);
     });
     res.status(201).json({ "update": "update" });
