@@ -24,7 +24,6 @@ ProductsController.prototype.findOne = function(req, res) {
 
 ProductsController.prototype.create = function(req, res) {
     var data = req.body;
-    console.log(data);
     this.Model.create(data, function(err, result) { // no calback primeiro o err depois o resposta
         console.log(err, result);
     });
@@ -33,15 +32,16 @@ ProductsController.prototype.create = function(req, res) {
 
 ProductsController.prototype.update = function(req, res) {
     var data = req.body;
-    this.Model.update(data, function(err, result) { // no calback primeiro o err depois o resposta
+    var id = req.params._id;
+    this.Model.update(id, data, function(err, result) { // no calback primeiro o err depois o resposta
         console.log(err, result);
     });
     res.status(201).json({ "update": "update" });
 };
 
 ProductsController.prototype.delete = function(req, res) {
-    var _id = req.params.id;
-    this.Model.delete(_id, function(err, result) { // no calback primeiro o err depois o resposta
+    var id = req.params._id;
+    this.Model.delete(id, function(err, result) { // no calback primeiro o err depois o resposta
         res.json(result);
     });
     res.status(201).json({ "delete": "delete" });

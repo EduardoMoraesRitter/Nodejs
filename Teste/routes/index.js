@@ -23,5 +23,6 @@ so é executada quando a rota é chamada (virando assim um callback dessa rota)
 Objetc.bind();
 
 
-
+erro do express:
+http://nomadev.com.br/node-js-melhor-visualiza%C3%A7%C3%A3o-de-erros-no-express/
  */
