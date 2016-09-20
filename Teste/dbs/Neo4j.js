@@ -6,6 +6,9 @@ https://github.com/neo-technology/neo4js
 https://github.com/tbaum/heroku-node-neo4js
 
 http://nodejsconfit.levelgraph.io/
+
+tutorial
+https://www.youtube.com/watch?v=snjnJCZhXUM
  */
 
 var neo4j = require('neo4j');
