@@ -25,3 +25,5 @@ var server = app.listen(3000, function() {
     console.log('rodando!', host, port);
 
 });
+//https://www.infoq.com/br/presentations/nodejs-estruturando-suas-aplicacoes
+//https://www.infoq.com/br/presentations/super-tests-in-nodejs#mainLogin

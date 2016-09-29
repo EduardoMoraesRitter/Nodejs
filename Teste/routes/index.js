@@ -1,4 +1,5 @@
 var express = require('express');
+//http://nomadev.com.br/node-js-melhor-visualiza%C3%A7%C3%A3o-de-erros-no-express/
 var router = express.Router();
 
 var ProductsModel = require('../model/ProductsModel.js')

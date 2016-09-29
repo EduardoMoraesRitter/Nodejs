@@ -1,0 +1,59 @@
+
+<div style="width: 100%;text-align: center;">
+
+<div style="width: 300px; height: 100%; border: 1px solid black; float: left;">
+    <h3>Add Pessoa</h3>
+    <form method="post" action="/pessoa/add">
+        <label>Pessoa Nome</label><br>
+        <input type="text" name="pessoa_nome">
+        <br>
+        <label>Idade</label><br>
+        <input type="text" name="pessoa_idade">
+        <br><br>
+        <input type="submit" values="enviar">
+    </form>
+
+    <h3>Add Autor</h3>
+    <form method="post" action="/autor/add">
+        <label>Autor Nome</label><br>
+        <input type="text" name="nome">
+        <br><br>
+        <input type="submit" values="enviar">
+    </form>
+
+    <h3>Add Relação</h3>
+    <form method="post" action="/pessoa/autor/add">
+        <label>Pessoa</label><br>
+        <input type="text" name="pessoa_nome">
+        <br>
+        <label>Autor</label><br>
+        <input type="text" name="autor_nome">
+        <br><br>
+        <input type="submit" values="enviar">
+    </form>
+</div>
+
+<div style="width: 500px; height: 100%; border: 1px solid black; float: left;">
+<!--http://www.richardbarros.com.br/blog/css/css-truques-para-dominar-a-propriedade-float-->
+
+    teste
+
+</div>
+
+<div style="width: 300px; height: 100%; border: 1px solid black; float: left;">
+    <h1>Pessoas</h1>
+        <ul>
+            <% pessoas.forEach(function(pessoa){ %>
+                <li><%= pessoa.nome %> <%= pessoa.idade %></li>
+            <% }) %>
+        </ul>
+
+    <h1>Autor</h1>
+        <ul>
+            <% autores.forEach(function(autor){ %>
+                <li><%= autor.nome %></li>
+            <% }) %>
+        </ul>
+</div>
+
+</div>

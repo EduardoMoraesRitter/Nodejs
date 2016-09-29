@@ -9,6 +9,8 @@ http://nodejsconfit.levelgraph.io/
 
 tutorial
 https://www.youtube.com/watch?v=snjnJCZhXUM
+
+https://neo4j.com/developer/javascript/
  */
 
 var neo4j = require('neo4j');
